@@ -27,5 +27,11 @@ app.use(express.urlencoded({ extended: true }));
 // Using cookie-parser to parse cookies attached to client requests, making them available via 'req.cookies'.
 app.use(cookieParser());
 
+// import router
+import userRouter from "./routes/user.routes.js"
+
+// routes declaration
+app.use("/api/v1/users", userRouter);
+
 // Exporting the 'app' instance for use in other parts of the application, such as initializing the server and defining routes.
 export { app }; 
